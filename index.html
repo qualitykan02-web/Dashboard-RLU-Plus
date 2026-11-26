@@ -115,7 +115,7 @@ $('#m').innerHTML=tab===1?ov():dt(tab+0);if(tab>1)bind(tab)}
 // ===== การเชื่อมต่อ Google Sheet =====
 const SHEET_ID='1iOY8_owKvwSMXwalbiuXbnSLGx4txWzwzgp66kM_9aY';
 const SHEET_NAME='ตัวชี้วัดหลัก';   // ชื่อแท็บที่เก็บข้อมูล 3 ส่วน
-const CSV_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vQoNwnWyZwu3g6sxFQ2ifT7yZOMsJKVlblLQ0W-S1gUO27jlUe6Cl9Krz37h23cRRHsUZ9Mj3jz8MVs/pubhtml?gid=653514615&single=true';                  // (ถ้ามี) วางลิงก์ "เผยแพร่ไปยังเว็บ" แบบ CSV ตรงนี้ จะเสถียรที่สุด
+const CSV_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vQoNwnWyZwu3g6sxFQ2ifT7yZOMsJKVlblLQ0W-S1gUO27jlUe6Cl9Krz37h23cRRHsUZ9Mj3jz8MVs/pub?gid=653514615&single=true&output=csv';                  // (ถ้ามี) วางลิงก์ "เผยแพร่ไปยังเว็บ" แบบ CSV ตรงนี้ จะเสถียรที่สุด
 const REFRESH_MS=30000;            // รีเฟรชทุก 30 วินาที
 LV[0]='ไม่ระบุ';
 function csv(t){const R=[];let r=[],c='',q=false;for(let i=0;i<t.length;i++){const h=t[i];if(q){if(h=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=h}else if(h=='"')q=true;else if(h==','){r.push(c);c=''}else if(h=='\n'){r.push(c);R.push(r);r=[];c=''}else if(h!='\r')c+=h}r.push(c);R.push(r);return R}
